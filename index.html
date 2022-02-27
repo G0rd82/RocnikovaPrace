@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalendář</title>
+    <link rel="stylesheet" href="new.css">
+    <link rel="icon" href=favicon.png type="image/x-icon"/>
+
+</head>
+
+<body class="light">
+
+<div class="calendar">
+    <div class="calendar-header">
+        <span class="month-picker" id="month-picker">February</span>
+        <div class="year-picker">
+                <span class="year-change" id="prev-year">
+                    <pre><</pre>
+                </span>
+            <span id="year">2022</span>
+            <span class="year-change" id="next-year">
+                    <pre>></pre>
+                </span>
+        </div>
+    </div>
+    <div class="calendar-body">
+        <div class="calendar-week-day">
+            <div>Ne</div>
+            <div>Po</div>
+            <div>Út</div>
+            <div>St</div>
+            <div>Čt</div>
+            <div>Pá</div>
+            <div>So</div>
+        </div>
+        <div class="calendar-days"></div>
+    </div>
+    <div class="toggle">
+        <div class="dark-mode-switch">
+            <div class="dark-mode-switch-ident">
+                <img id="sun" src="sun.png" alt="sun">
+                <img id="moon" src="moon.png" alt="moon">
+            </div>
+        </div>
+    </div>
+
+    <div class="month-list"></div>
+</div>
+
+<script src="main.js"></script>
+</body>
+
+</html>

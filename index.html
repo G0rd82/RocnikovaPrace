@@ -14,7 +14,21 @@
 
 <div class="calendar">
     <div class="calendar-header">
-        <span class="month-picker" id="month-picker">February</span>
+
+
+        <div class="month-picker">
+        <span class="month-change" id="prev-month">
+              <pre><</pre>
+            </span>
+            <span id="month-picker">February</span>
+            <span class="month-change" id="next-month">
+                    <pre>></pre>
+                </span>
+
+        </div>
+
+        <div class="month-list"></div>
+
         <div class="year-picker">
                 <span class="year-change" id="prev-year">
                     <pre><</pre>
@@ -45,8 +59,6 @@
             </div>
         </div>
     </div>
-
-    <div class="month-list"></div>
 </div>
 
 <script src="main.js"></script>

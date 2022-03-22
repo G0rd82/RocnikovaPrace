@@ -1,5 +1,4 @@
 let calendar = document.querySelector('.calendar')
-
 const month_names = ['Leden', 'Únor', 'Březen', 'Duben', 'Květen', 'Červen', 'Červenec', 'Srpen', 'Září', 'Říjen', 'Listopad', 'Prosinec']
 
 isLeapYear = (year) => {
@@ -81,6 +80,7 @@ document.querySelector('#next-year').onclick = () => {
     ++curr_year.value
     generateCalendar(curr_month.value, curr_year.value)
 }
+
 
 let dark_mode_toggle = document.querySelector('.dark-mode-switch')
 

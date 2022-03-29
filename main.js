@@ -62,7 +62,26 @@ let month_picker = calendar.querySelector('#month-picker')
 
 month_picker.onclick = () => {
     month_list.classList.add('show')
+
+
 }
+document.querySelector('#prev-month').onclick = () => {
+    if (this.curr_month == 0){
+        this.curr_month = 11;
+    }else {
+        this.curr_month = this.curr_month-1;
+    }
+    generateCalendar(curr_month.value)
+}
+document.querySelector('#next-month').onclick = () => {
+    if (this.curr_month == 11){
+        this.curr_month = 0;
+    }else {
+        this.curr_month = this.curr_month+1;
+    }
+    generateCalendar(curr_month.value)
+}
+
 
 let currDate = new Date()
 

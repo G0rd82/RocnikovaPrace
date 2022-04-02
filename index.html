@@ -20,7 +20,7 @@
         <span class="month-change" id="prev-month">
               <pre><</pre>
             </span>
-            <span id="month-picker">February</span>
+            <span id="month-picker">Leden</span>
             <span class="month-change" id="next-month">
                     <pre>></pre>
                 </span>
@@ -60,6 +60,26 @@
         </div>
     </div>
 </div>
+
+<div id="newEventModal">
+    <h2>Nová událost</h2>
+
+    <input id="eventTitleInput" placeholder="Přidejte událost" />
+
+    <button id="saveButton">Uložit</button>
+    <button id="cancelButton">Zpět</button>
+</div>
+
+<div id="deleteEventModal">
+    <h2>Událost</h2>
+
+    <p id="eventText"></p>
+
+    <button id="deleteButton">Smazat</button>
+    <button id="closeButton">Zpět</button>
+</div>
+
+<div id="modalBackDrop"></div>
 
 <script src="main.js"></script>
 </body>

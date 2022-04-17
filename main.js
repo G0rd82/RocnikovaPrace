@@ -28,6 +28,7 @@ const closeModal = () =>{
     backDrop.style.display = 'none';
     eventTitleInput.value = '';
     clicked = null;
+
 }
 isLeapYear = (year) =>{
     return (year % 4===0 && year % 100 !== 0 && year % 400 !==0) || (year % 100 === 0 && year % 400 ===0)
@@ -68,13 +69,12 @@ const generateCalendar = (month, year) =>{
             if (eventForDay) {
                 const eventDiv = document.createElement('div');
                 eventDiv.classList.add('event');
-                eventDiv.innerText = eventForDay.title;
+                eventDiv.innerText = eventForDay.innerText;
                 day.appendChild(eventDiv);
             }
+            day.addEventListener('click', () => openModal(day.innerHTML));
         }
-
         calendar_days.appendChild(day)
-        day.addEventListener('click', () => openModal(first_day));
     }
 }
 

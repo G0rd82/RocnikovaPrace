@@ -1,14 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700;1,800&display=swap');
+
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 html,
 body {
-    height: 100vh;
+    margin: 0;
+    width: 100%;
+    height: 100%;
     display: grid;
     place-items: center;
-    background-color: lightskyblue;
+    background: rgb(49,133,255);
+    background: -moz-linear-gradient(30deg, rgba(49,133,255,1) 0%, rgba(241,163,181,1) 100%);
+    background: -webkit-linear-gradient(30deg, rgba(49,133,255,1) 0%, rgba(241,163,181,1) 100%);
+    background: linear-gradient(30deg, rgba(49,133,255,1) 0%, rgba(241,163,181,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3185ff",endColorstr="#f1a3b5",GradientType=1);
 }
 
 .calendar {
@@ -17,6 +26,7 @@ body {
     background-color: var(--bg-main);
     padding: 50px;
     position: absolute;
+    border-radius: 8px;
 }
 
 .light .calendar {
@@ -59,23 +69,27 @@ body {
 }
 
 .calendar-days div {
+
     box-sizing: border-box;
     width: 75px;
     height: 75px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
     position: relative;
     cursor: pointer;
-    align-items: center;
     text-shadow: black;
-    transition: background-color 0.2s;
-    border: 2px solid lightgray;
+    border: 2px solid rgba(128,128,128,.2);
+    border-radius: 8px;
+    transition: .2s;
+    font-weight: bold;
+    margin: 2px;
 }
 .calendar-days div:hover{
-    border: 3px solid black;
+    border: 0 solid rgba(128,128,128,.2);
+    transform: scale(1.04);
     cursor: pointer;
+    box-shadow: 0 0 10px rgba(128,128,128,.4);
 }
 
 .calendar-days div span {
@@ -84,7 +98,7 @@ body {
 
 .calendar-days div.curr-date,
 .calendar-days div.curr-date:hover {
-    background-color: red;
+    background-color: dodgerblue;
     color: var(--white);
 }
 .month-picker {
@@ -121,7 +135,10 @@ body {
 }
 
 .toggle {
-    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
 }
 
 .toggle span {
@@ -130,14 +147,13 @@ body {
 }
 
 .dark-mode-switch {
+    transform: scale(1.1);
     position: relative;
     width: 48px;
     height: 25px;
     border-radius: 14px;
     background-color: var(--bg-second);
     cursor: pointer;
-    top: -680px;
-    left: 1100px;
 }
 
 .dark-mode-switch-ident {
@@ -164,6 +180,7 @@ body {
 #moon{
     width: 21px;
     height: 21px;
+    display: none;
 }
 :root {
     --dark-body: #4d4c5a;
@@ -194,10 +211,10 @@ body {
     --color-hover: var(--light-hover);
     --color-txt: var(--light-text);
 }
-/*/////////////////////////////////////////////////////////////*/
+
 .event {
     font-size: 10px;
-    padding: 3px;
+    padding: 0;
     background-color: #58bae4;
     color: white;
     border-radius: 5px;
@@ -212,8 +229,6 @@ body {
     box-shadow: 0px 0px 3px black;
     border-radius: 5px;
     width: 550px;
-    top: 250px;
-    left: calc(50% - 175px);
     position: absolute;
     font-family: sans-serif;
 }
@@ -228,14 +243,29 @@ body {
     box-shadow: 0px 0px 3px gray;
 }
 #cancelButton, #deleteButton {
-    background-color: red;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 3px gray;
 }
 #saveButton, #closeButton {
-    background-color: blue;
-    border-radius: 5px;
+    background-color: dodgerblue;
+    box-shadow: 0 3px blue;
+}
+#cancelButton, #deleteButton, #saveButton, #closeButton {
+    position: relative;
+    margin-right: 4px;
+    padding: 10px 0;
+    width: 70px;
+    font-weight: bold;
+    border: 0;
     cursor: pointer;
+    border-radius: 5px;
+    transition: .2s;
+    top: 0;
+}
+
+#cancelButton:hover, #deleteButton:hover, #saveButton:hover, #closeButton:hover {
+    top: 3px;
+    box-shadow: 0 0 transparent;
 }
 #eventText {
     font-size: 14px;

@@ -35,7 +35,7 @@ isLeapYear = (year) =>{
 }
 
 getFebDays = (year) =>{
-    return isLeapYear(year) ? 29 : 29
+    return isLeapYear(year) ? 29 : 28
 }
 const month_names = ['Leden', 'Únor', 'Březen', 'Duben', 'Květen', 'Červen', 'Červenec', 'Srpen', 'Září', 'Říjen', 'Listopad', 'Prosinec']
 
@@ -126,9 +126,20 @@ document.querySelector("#next-year").onclick = () => {
 }
 let dark_mode_toggle = document.querySelector('.dark-mode-switch')
 
+let isDarkMode = false;
 dark_mode_toggle.onclick = () => {
     document.querySelector('body').classList.toggle('light')
     document.querySelector('body').classList.toggle('dark')
+    if (isDarkMode) {
+        document.getElementById('sun').style.display = 'block';
+        document.getElementById('moon').style.display = 'none';
+        isDarkMode = false
+    } else {
+        document.getElementById('sun').style.display = 'none';
+        document.getElementById('moon').style.display = 'block';
+        isDarkMode = true
+
+    }
 }
 const initButtons = () => {
     document.getElementById('saveButton').addEventListener('click', saveEvent);

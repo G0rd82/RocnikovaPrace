@@ -188,6 +188,10 @@ body {
     height: 21px;
     display: none;
 }
+#favicon{
+    width: max-content;
+    height: max-content;
+}
 
 :root {
     --dark-body: #4C4B59FF;

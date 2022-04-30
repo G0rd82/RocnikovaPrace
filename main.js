@@ -6,7 +6,7 @@ const newEventModal = document.getElementById('newEventModal');
 const backDrop = document.getElementById('modalBackDrop');
 let clicked = null;
 
-openModal = (date) => {
+const openModal = (date) => {
     clicked = date;
 
     const eventForDay = events.find(e => e.date === clicked);
@@ -30,12 +30,12 @@ const closeModal = () => {
     clicked = null;
 
 }
-isLeapYear = (year) => {
+const LeapYear = (year) => {
     return (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 === 0)
 }
 
-getFebDays = (year) => {
-    return isLeapYear(year) ? 29 : 28
+const FebDays = (year) => {
+    return LeapYear(year) ? 29 : 28
 }
 const month_names = ['Leden', 'Únor', 'Březen', 'Duben', 'Květen', 'Červen', 'Červenec', 'Srpen', 'Září', 'Říjen', 'Listopad', 'Prosinec']
 
@@ -45,7 +45,7 @@ const generateCalendar = (month, year) => {
     let calendar_days = document.querySelector(".calendar-days")
     calendar_days.innerHTML = ""
     let calendar_header_year = document.querySelector("#year")
-    let days_of_month = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    let days_of_month = [31, FebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
     let currDate = new Date()
 

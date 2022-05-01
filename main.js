@@ -67,12 +67,11 @@ const generateCalendar = (month, year) => {
                 day.classList.add("curr-date")
             }
 
-            // Check Day
             const eventForDayCheck = events.find(e => e.date === day.innerHTML);
             if (eventForDayCheck !== undefined) {
                 day.classList.add('day-mark');
             }
-            // ----------
+
 
             if (eventForDay) {
                 const eventDiv = document.createElement('div');
@@ -92,14 +91,14 @@ let curr_year = {value: currDate.getFullYear()}
 
 generateCalendar(curr_month.value, curr_year.value)
 
-// DayClicked Generator
+
 let dayClick;
 window.onclick = e => {
     if (e.target.tagName === 'DIV') {
         dayClick = e.target;
     }
 }
-// --------------
+
 
 const saveEvent = () => {
     if (eventTitleInput.value) {
@@ -109,7 +108,6 @@ const saveEvent = () => {
             title: eventTitleInput.value,
         });
 
-        // Update Day Icon
         dayClick.classList.add('day-mark');
 
         closeModal();
@@ -121,7 +119,6 @@ const saveEvent = () => {
 const deleteEvent = () => {
     events = events.filter(e => e.date !== clicked);
 
-    // Update Day Icon
     dayClick.classList.remove('day-mark');
 
     localStorage.setItem('events', JSON.stringify(events));
